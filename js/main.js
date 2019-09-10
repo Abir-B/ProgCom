@@ -1,39 +1,38 @@
+$(document).ready(function() {
+    "use strict";
 
-$(document).ready(function(){
-	"use strict";
-
-	var window_width 	 = $(window).width(),
-	window_height 		 = window.innerHeight,
-	header_height 		 = $(".default-header").height(),
-	header_height_static = $(".site-header.static").outerHeight(),
-	fitscreen 			 = window_height - header_height;
+    var window_width = $(window).width(),
+        window_height = window.innerHeight,
+        header_height = $(".default-header").height(),
+        header_height_static = $(".site-header.static").outerHeight(),
+        fitscreen = window_height - header_height;
 
 
-	$(".fullscreen").css("height", window_height)
-	$(".fitscreen").css("height", fitscreen);
+    $(".fullscreen").css("height", window_height)
+    $(".fitscreen").css("height", fitscreen);
 
-     
-     // -------   Active Mobile Menu-----//
 
-    $(".menu-bar").on('click', function(e){
+    // -------   Active Mobile Menu-----//
+
+    $(".menu-bar").on('click', function(e) {
         e.preventDefault();
         $("nav").toggleClass('hide');
         $("span", this).toggleClass("lnr-menu lnr-cross");
         $(".main-menu").addClass('mobile-menu');
     });
-     
+
     $('select').niceSelect();
     $('.img-pop-up').magnificPopup({
         type: 'image',
-        gallery:{
-        enabled:true
+        gallery: {
+            enabled: true
         }
     });
 
     $('.active-works-carousel').owlCarousel({
         center: true,
-        items:2,
-        loop:true,
+        items: 2,
+        loop: true,
         margin: 100,
         dots: true,
         responsive: {
@@ -50,20 +49,39 @@ $(document).ready(function(){
     });
     // Add smooth scrolling to Menu links
     $(".main-menu li a, .smooth").on('click', function(event) {
-            if (this.hash !== "") {
-              event.preventDefault();
-              var hash = this.hash;
-              $('html, body').animate({
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
                 scrollTop: $(hash).offset().top - (-10)
-            }, 600, function(){
-             
+            }, 600, function() {
+
                 window.location.hash = hash;
             });
-        } 
+        }
     });
 
-    $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    });      
+    $('#mc_embed_signup').find('form').ajaxChimp();
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
 
- });
+    var searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#qs_table tr").filter(function() {
+            if (!$(this).hasClass("keep")) {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            }
+        });
+    });
+});
