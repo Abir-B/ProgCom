@@ -2774,3 +2774,7 @@ td {
     font-weight: bold;
     color: rgb(80, 80, 80);
 }
+
+.testing {
+    border-color: #000;
+}
