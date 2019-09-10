@@ -76,12 +76,14 @@ $(document).ready(function() {
     }
 
     var searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#qs_table tr").filter(function() {
-            if (!$(this).hasClass("keep")) {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            }
+    if (searchInput) {
+        searchInput.addEventListener("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#qs_table tr").filter(function() {
+                if (!$(this).hasClass("keep")) {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                }
+            });
         });
-    });
+    }
 });

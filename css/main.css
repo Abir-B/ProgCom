@@ -193,6 +193,12 @@ th {
     border-radius: 0px;
 }
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 /**
  * For modern browsers
@@ -2005,7 +2011,7 @@ h6 {
 }
 
 nav {
-    margin-right: 70px;
+    margin-right: 0px;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -2013,7 +2019,7 @@ nav {
     transform-origin: 100% 50%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
     nav {
         margin-right: 0;
         position: absolute;
@@ -2030,6 +2036,7 @@ nav.hide {
 nav a {
     font-size: 12px;
     font-weight: 500;
+    position: relative;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 25px;
