@@ -1117,7 +1117,7 @@ h6 {
 }
 
 .progress-table .visit {
-    width: 60%;
+    width: 80%;
 }
 
 .progress-table .percentage {
@@ -1203,7 +1203,6 @@ h6 {
 
 .progress-table .table-row-title {
     padding: 15px 0;
-    background: #ebf9ff;
     border-top: 1px solid #edf3fd;
     color: #000;
     display: flex;
@@ -2019,16 +2018,6 @@ nav {
     transform-origin: 100% 50%;
 }
 
-@media (max-width: 1000px) {
-    nav {
-        margin-right: 0;
-        position: absolute;
-        right: 0;
-        top: 50px;
-        text-align: right;
-    }
-}
-
 nav.hide {
     transform: scale(0);
 }
@@ -2044,6 +2033,43 @@ nav a {
 
 nav a:hover {
     color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .banner-area {
+        height: 450px;
+    }
+    .banner-content {
+        margin-top: 80px;
+    }
+    nav a {
+        margin: 5px 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        margin-right: 0;
+        position: relative;
+        right: 0;
+        display: block;
+        top: 10px;
+        text-align: right;
+        background: #252e58;
+        border-radius: 3%;
+    }
+    .banner-content {
+        margin-top: 100px;
+    }
+    nav a {
+        position: relative;
+        margin: 10px 10px;
+        display: block;
+    }
+    nav a:hover {
+        color: #bde5f5;
+    }
 }
 
 body {
@@ -2219,7 +2245,7 @@ body:after {
 }
 
 .banner-area .height {
-    height: 300px;
+    height: 350px;
 }
 
 .banner-area .generic-height {
@@ -2780,8 +2806,4 @@ td {
     font-size: 15px;
     font-weight: bold;
     color: rgb(80, 80, 80);
-}
-
-.testing {
-    border-color: #000;
 }
